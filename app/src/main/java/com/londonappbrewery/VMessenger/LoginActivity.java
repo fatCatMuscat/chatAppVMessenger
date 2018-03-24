@@ -1,4 +1,4 @@
-package com.londonappbrewery.flashchatnewfirebase;
+package com.londonappbrewery.VMessenger;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Executed when Register button pressed
     public void registerNewUser(View v) {
-        Intent intent = new Intent(this, com.londonappbrewery.flashchatnewfirebase.RegisterActivity.class);
+        Intent intent = new Intent(this, com.londonappbrewery.VMessenger.RegisterActivity.class);
         finish();
         startActivity(intent);
     }

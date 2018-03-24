@@ -1,4 +1,4 @@
-package com.londonappbrewery.flashchatnewfirebase;
+package com.londonappbrewery.VMessenger;
 
 import org.junit.Test;
 
