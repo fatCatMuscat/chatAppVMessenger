@@ -1,4 +1,4 @@
-package com.londonappbrewery.VMessenger;
+package com.fatcatmuscat.VMessenger;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

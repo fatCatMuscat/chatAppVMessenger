@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.londonappbrewery.VMessenger"
+    package="com.fatcatmuscat.VMessenger"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name="com.londonappbrewery.VMessenger.LoginActivity"
+            android:name="com.fatcatmuscat.VMessenger.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan" >
@@ -25,12 +25,12 @@
         </activity>
 
         <activity
-            android:name="com.londonappbrewery.VMessenger.RegisterActivity"
+            android:name="com.fatcatmuscat.VMessenger.RegisterActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name="com.londonappbrewery.VMessenger.MainChatActivity"
+            android:name="com.fatcatmuscat.VMessenger.MainChatActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
