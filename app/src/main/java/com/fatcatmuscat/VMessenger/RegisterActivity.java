@@ -128,7 +128,8 @@ public class RegisterActivity extends AppCompatActivity {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         // *** LOG MESSAGE ***
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Log.d("VMessenger", "createUser onComplete: " + task.isSuccessful());
@@ -139,7 +140,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else {
                     saveDisplayName();
-                   // showUserRegisteredDialog("Registration attempt successful");
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     finish();
                     startActivity(intent);
@@ -166,17 +166,6 @@ public class RegisterActivity extends AppCompatActivity {
                 .setTitle("Ouch!")
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok,null)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
-
-    }
-
-    private void showUserRegisteredDialog(String message) {
-
-        new AlertDialog.Builder(this)
-                .setTitle("Congratz! Registration successful!")
-                .setMessage(message)
-                .setPositiveButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
 
