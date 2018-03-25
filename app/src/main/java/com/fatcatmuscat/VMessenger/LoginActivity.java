@@ -10,12 +10,13 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class LoginActivity extends AppCompatActivity {
 
     // TODO: Add member variables here:
+    private FirebaseAuth mAuth;
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
@@ -40,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         // TODO: Grab an instance of FirebaseAuth
-
+        mAuth = FirebaseAuth.getInstance();
     }
 
     // Executed when Sign in button pressed
