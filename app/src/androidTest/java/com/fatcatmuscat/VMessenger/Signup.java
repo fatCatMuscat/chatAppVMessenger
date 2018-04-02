@@ -1,5 +1,6 @@
 package com.fatcatmuscat.VMessenger;
 
+import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
@@ -11,7 +12,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -30,11 +33,26 @@ public class Signup {
             new ActivityTestRule<>(RegisterActivity.class);
 
     @Test
-    public void testfirstTest(){
+    public void verifyEmailFieldRequired(){
         onView(withId(R.id.register_sign_up_button))
                 .perform(click());
         onView(withId(R.id.register_email))
                 .check(matches(hasErrorText("This field is required")));
+    }
+
+    @Test
+    public void verifyPasswordFieldRequired() {
+
+
+        onView(withId(R.id.register_username))
+                .perform(typeText("BobTheGoose"));
+        onView(withId(R.id.register_email))
+                .perform(typeText("bob@thegoose.quack"));
+        onView(withId(R.id.register_sign_up_button))
+                .perform(click());
+        onView(withId(R.id.register_password)).check(matches(hasErrorText
+                ("Password too short or does not match")));
+
     }
 
 }
