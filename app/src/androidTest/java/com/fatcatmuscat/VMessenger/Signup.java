@@ -14,8 +14,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.espresso.Espresso.closeSoftKeyboard;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -40,6 +42,16 @@ public class Signup {
     @Before
     public void setup() {
         resources = InstrumentationRegistry.getTargetContext().getResources();
+    }
+
+    @Test
+    public void testBackButton() {
+        onView(withId(R.id.register_sign_up_button))
+                .perform(click());
+        onView(withId(R.id.register_username))
+                .perform(typeText("BobTheGoose"));
+        closeSoftKeyboard();
+
     }
 
 
