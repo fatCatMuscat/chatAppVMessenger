@@ -17,5 +17,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="toast_login_progress">Login in progress&#8230;</string>
+    <string name="toast_login_unsuccessful_title">Oopsies!</string>
+    <string name="toast_login_unsuccessful_message">Login attempt failed</string>
+
     <string name="sample_message">Hello!</string>
 </resources>

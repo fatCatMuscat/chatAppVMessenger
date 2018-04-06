@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = mPasswordView.getText().toString();
         Log.d("VMessenger: ", "Login: " + email + ". Password: " + password);
         if (email.equals("") || password.equals("")) return;
-        else { Toast.makeText(this, "Login in progress...", Toast.LENGTH_SHORT).show();
+        else { Toast.makeText(this, R.string.toast_login_progress, Toast.LENGTH_SHORT).show();
         }
 
 
@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (!task.isSuccessful()) {
                     Log.d("VMessenger", "Problem signing in " +
                             task.getException());
-                            showErrorDialogue("Login attempt failed");
+                            showErrorDialogue(R.string.toast_login_unsuccessful_message);
                 }
                 else {
                     Intent intent = new Intent(LoginActivity.this, MainChatActivity.class);
@@ -100,10 +100,10 @@ public class LoginActivity extends AppCompatActivity {
 
     // TODO: Show error on screen with an alert dialog
 
-    private void showErrorDialogue(String message) {
+    private void showErrorDialogue(int message) {
 
         new AlertDialog.Builder(this)
-                .setTitle("Oopsie!")
+                .setTitle(R.string.toast_login_unsuccessful_title)
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok,null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
