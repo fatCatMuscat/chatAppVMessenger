@@ -1,8 +1,10 @@
 package com.fatcatmuscat.VMessenger;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.ViewAssertion;
+import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
@@ -52,18 +54,25 @@ public class LogIn {
     }
 
     @Test
-    public void testLogInWithValidCredentialsWorks() {
+    public void testLogInProgressToastMessage() {
         onView(withId(R.id.login_email)).perform(typeText("avc@morse.ru"));
         closeSoftKeyboard();
-        onView(withId(R.id.login_password)).perform(typeText("123"));
+        onView(withId(R.id.login_password)).perform(typeText("1234567"));
         closeSoftKeyboard();
         onView(withId(R.id.login_sign_in_button)).perform(click());
         onView(withText(R.string.toast_login_progress))
                 .inRoot(withDecorView(not(mLoginActivityActivityTestRule.getActivity().getWindow().getDecorView())))
                 .check(matches(isDisplayed()));
-
     }
 
+    @Test
+    public void testLoginAttemptFailedErrorMessage() {
+        onView(withId(R.id.login_email)).perform(typeText("avc@morse.ru"));
+        closeSoftKeyboard();
+        onView(withId(R.id.login_password)).perform(typeText("123456"));
+        closeSoftKeyboard();
+        onView(withId(R.id.login_sign_in_button)).perform(click());
 
+    }
 
 }

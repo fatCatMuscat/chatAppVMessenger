@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+
     // TODO: Add member variables here:
     private FirebaseAuth mAuth;
     // UI references.
