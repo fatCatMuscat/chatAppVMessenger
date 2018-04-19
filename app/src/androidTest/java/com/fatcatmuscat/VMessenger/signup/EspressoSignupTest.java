@@ -9,6 +9,7 @@ import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.fatcatmuscat.VMessenger.BaseTest;
 import com.fatcatmuscat.VMessenger.R;
 import com.fatcatmuscat.VMessenger.RegisterActivity;
 
@@ -32,7 +33,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class EspressoSignupTest {
+public class EspressoSignupTest extends BaseTest {
 
 
     @Rule

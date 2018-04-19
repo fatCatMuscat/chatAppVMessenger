@@ -10,6 +10,7 @@ import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.fatcatmuscat.VMessenger.BaseTest;
 import com.fatcatmuscat.VMessenger.LoginActivity;
 import com.fatcatmuscat.VMessenger.R;
 
@@ -39,7 +40,7 @@ import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class EspressoLogInTest {
+public class EspressoLogInTest extends BaseTest {
 
     @Rule
     public final
@@ -72,6 +73,19 @@ public class EspressoLogInTest {
         onView(withId(R.id.login_password)).perform(typeText("123456"));
         closeSoftKeyboard();
         onView(withId(R.id.login_sign_in_button)).perform(click());
+
+    }
+
+    @Test
+    public void loginPositiveTest() {
+
+        onView(withId(R.id.login_email)).perform(typeText(properties.getProperty("email")));
+        closeSoftKeyboard();
+        onView(withId(R.id.login_password)).perform(typeText(properties.getProperty("password")));
+        closeSoftKeyboard();
+        onView(withId(R.id.login_sign_in_button)).perform(click());
+        onView(withId(R.id.sendButton)).check(matches(isDisplayed()));
+
 
     }
 
