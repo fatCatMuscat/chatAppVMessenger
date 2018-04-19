@@ -1,4 +1,4 @@
-package com.fatcatmuscat.VMessenger;
+package com.fatcatmuscat.VMessenger.signup;
 
 import android.content.res.Resources;
 import android.support.test.InstrumentationRegistry;
@@ -8,6 +8,9 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+
+import com.fatcatmuscat.VMessenger.R;
+import com.fatcatmuscat.VMessenger.RegisterActivity;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -29,7 +32,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class Signup {
+public class EspressoSignupTest {
 
 
     @Rule
@@ -46,7 +49,7 @@ public class Signup {
 
     @Test
     public void testBackButton() {
-        onView(withId(R.id.register_sign_up_button))
+        onView(ViewMatchers.withId(R.id.register_sign_up_button))
                 .perform(click());
         onView(withId(R.id.register_username))
                 .perform(typeText("BobTheGoose"));

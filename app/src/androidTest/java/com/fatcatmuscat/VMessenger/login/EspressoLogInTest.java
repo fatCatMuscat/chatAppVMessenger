@@ -1,4 +1,4 @@
-package com.fatcatmuscat.VMessenger;
+package com.fatcatmuscat.VMessenger.login;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.support.test.InstrumentationRegistry;
@@ -9,6 +9,9 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+
+import com.fatcatmuscat.VMessenger.LoginActivity;
+import com.fatcatmuscat.VMessenger.R;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -33,13 +36,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
-/**
- * Created by arsenal on 4/5/18.
- */
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class LogIn {
+public class EspressoLogInTest {
 
     @Rule
     public final
@@ -55,7 +55,7 @@ public class LogIn {
 
     @Test
     public void testLogInProgressToastMessage() {
-        onView(withId(R.id.login_email)).perform(typeText("avc@morse.ru"));
+        onView(ViewMatchers.withId(R.id.login_email)).perform(typeText("avc@morse.ru"));
         closeSoftKeyboard();
         onView(withId(R.id.login_password)).perform(typeText("1234567"));
         closeSoftKeyboard();
