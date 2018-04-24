@@ -1,4 +1,4 @@
-package com.fatcatmuscat.VMessenger;
+package com.fatcatmuscat.VMessenger.utils;
 
 
 import android.content.res.AssetManager;

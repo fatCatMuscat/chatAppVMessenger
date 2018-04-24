@@ -1,16 +1,12 @@
 package com.fatcatmuscat.VMessenger.login;
 import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.ViewAction;
-import android.support.test.espresso.ViewAssertion;
-import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.fatcatmuscat.VMessenger.BaseTest;
+import com.fatcatmuscat.VMessenger.utils.BaseTest;
 import com.fatcatmuscat.VMessenger.LoginActivity;
 import com.fatcatmuscat.VMessenger.R;
 
@@ -19,12 +15,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.Random;
-
 import static android.support.test.espresso.Espresso.closeSoftKeyboard;
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
-import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -32,9 +24,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
@@ -92,17 +82,6 @@ public class EspressoLogInTest extends BaseTest {
     }
 
 
-    String generateRandomPassword(int length) {
-        String base = "ABCDEFJKLMNOPQRSTUVWXYZ1234567890";
 
-        Random rand = new Random();
-        StringBuilder result = new StringBuilder();
-
-        while (length-- > 0) {
-            int index = rand.nextInt(base.length());
-            result.append(base.charAt(index));
-        }
-        return result.toString();
-    }
 
 }
