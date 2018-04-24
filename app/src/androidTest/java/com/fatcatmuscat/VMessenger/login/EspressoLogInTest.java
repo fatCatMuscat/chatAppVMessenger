@@ -19,6 +19,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Random;
+
 import static android.support.test.espresso.Espresso.closeSoftKeyboard;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
@@ -87,6 +89,20 @@ public class EspressoLogInTest extends BaseTest {
         onView(withId(R.id.sendButton)).check(matches(isDisplayed()));
 
 
+    }
+
+
+    String generateRandomPassword(int length) {
+        String base = "ABCDEFJKLMNOPQRSTUVWXYZ1234567890";
+
+        Random rand = new Random();
+        StringBuilder result = new StringBuilder();
+
+        while (length-- > 0) {
+            int index = rand.nextInt(base.length());
+            result.append(base.charAt(index));
+        }
+        return result.toString();
     }
 
 }
