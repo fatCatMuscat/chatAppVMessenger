@@ -56,9 +56,9 @@ public class EspressoLogInTest extends BaseTest {
 
     @Test
     public void testLogInProgressToastMessage() {
-        onView(ViewMatchers.withId(R.id.login_email)).perform(typeText("avc@morse.ru"));
+        onView(ViewMatchers.withId(R.id.login_email)).perform(typeText(getProperties().getProperty("email")));
         closeSoftKeyboard();
-        onView(withId(R.id.login_password)).perform(typeText("1234567"));
+        onView(withId(R.id.login_password)).perform(typeText(getProperties().getProperty("password")));
         closeSoftKeyboard();
         onView(withId(R.id.login_sign_in_button)).perform(click());
         onView(withText(R.string.toast_login_progress))
@@ -68,9 +68,9 @@ public class EspressoLogInTest extends BaseTest {
 
     @Test
     public void testLoginAttemptFailedErrorMessage() {
-        onView(withId(R.id.login_email)).perform(typeText("avc@morse.ru"));
+        onView(withId(R.id.login_email)).perform(typeText(getProperties().getProperty("password")));
         closeSoftKeyboard();
-        onView(withId(R.id.login_password)).perform(typeText("123456"));
+        onView(withId(R.id.login_password)).perform(typeText(getProperties().getProperty("password")));
         closeSoftKeyboard();
         onView(withId(R.id.login_sign_in_button)).perform(click());
 
