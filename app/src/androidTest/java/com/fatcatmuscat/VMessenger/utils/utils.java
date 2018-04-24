@@ -5,7 +5,7 @@ import java.util.Random;
 public class utils {
 
 
-    String generateRandomPassword(int length) {
+     public String generateRandomPassword(int length) {
         String base = "ABCDEFJKLMNOPQRSTUVWXYZ1234567890";
 
         Random rand = new Random();
