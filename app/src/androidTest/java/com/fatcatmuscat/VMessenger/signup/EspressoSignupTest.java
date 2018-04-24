@@ -1,13 +1,15 @@
-package com.fatcatmuscat.VMessenger;
+package com.fatcatmuscat.VMessenger.signup;
 
 import android.content.res.Resources;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.ViewAction;
-import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+
+import com.fatcatmuscat.VMessenger.utils.BaseTest;
+import com.fatcatmuscat.VMessenger.R;
+import com.fatcatmuscat.VMessenger.RegisterActivity;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -16,20 +18,17 @@ import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.closeSoftKeyboard;
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
-import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.hasErrorText;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 // Registration page tests
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class Signup {
+public class EspressoSignupTest extends BaseTest {
 
 
     @Rule
@@ -46,7 +45,7 @@ public class Signup {
 
     @Test
     public void testBackButton() {
-        onView(withId(R.id.register_sign_up_button))
+        onView(ViewMatchers.withId(R.id.register_sign_up_button))
                 .perform(click());
         onView(withId(R.id.register_username))
                 .perform(typeText("BobTheGoose"));
